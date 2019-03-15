@@ -22,7 +22,7 @@ public class TaskWS {
 	 * AllTasks service
 	 * */
 	@GET
-	@Path("/allTasks")
+	@Path("/")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response AllTasks(){
 		return Response.ok(dao.list()).build();		

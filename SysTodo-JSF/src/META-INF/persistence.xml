@@ -15,6 +15,11 @@
  <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/systodo" ></property>
  <property name="javax.persistence.jdbc.user" value="postgres" />
  <property name="javax.persistence.jdbc.password" value="postgres" />
+ 
+ <!-- This property as added to desable a not important warning between Spring boot and postgres-->
+ <!--<property name="hibernate.jdbc.lob.non_contextual_creation" value="true"/>-->  
+ <property name="hibernate.temp.use_jdbc_metadata_defaults" value="false" />
+ 
  </properties>
  
  </persistence-unit>
