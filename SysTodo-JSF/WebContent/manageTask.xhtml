@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui" xmlns:b="http://bootsfaces.net/ui"
+    xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+    <title>Manage Task</title>
+    <style>
+#rodape {
+    background-color: #167A89;
+    color: #F7FBFC;
+}
+
+#bordas {
+    background-color: #F8F8FC;
+}
+</style>
+</h:head>
+<h:body>
+    <div id="bordas">
+        <b:container>
+            <b:navBar inverse="true" fixed="top">
+                <b:navbarLinks>
+                    <b:navLink value="tasks List" href="task.xhtml"></b:navLink>
+                    <b:navLink value="Tanage Task" href="manageTask.xhtml"></b:navLink>
+                </b:navbarLinks>
+            </b:navBar>
+            <br />
+            <hr />
+            <br />
+            <br />
+            <br />
+            <h1>
+                <h:outputText value="Manage task" />
+            </h1>
+            <br />
+            <br />
+            <h:form>
+                <p:panel id="panel" header="Add task">
+
+                    <h:panelGrid columns="3" cellpadding="5">
+                        <p:outputLabel value="Description" />
+                        <p:inputText id="description" value="#{taskMBean.task.description}"
+                            label="description">
+                        </p:inputText>
+                    </h:panelGrid>
+                    <p:commandButton value="Save" update="panel"
+                        action="#{taskMBean.save}" />
+                </p:panel>
+            </h:form>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+        </b:container>
+    </div>
+    <div id="rodape">
+        <br /> <br /> <br /> <br />
+        <center>
+            <h2>
+                <h:outputText value="Todos os direitos reservados" />
+            </h2>
+            
+        </center>
+        <br /> <br /> <br />
+    </div>
+</h:body>
+</html> 

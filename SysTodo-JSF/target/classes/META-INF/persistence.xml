@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="1.0"
+    xmlns="http://java.sun.com/xml/ns/persistence">
+     
+<persistence-unit name="SysTodo">
+<provider>org.hibernate.ejb.HibernatePersistence</provider>
+ <class>com.todo.model.Task</class>
+ 
+ <properties>
+ <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
+ <property name="hibernate.hbm2ddl.auto" value="update" />
+ <property name="hibernate.show_sql" value="true" />
+ <property name="hibernate.format_sql" value="true" />
+ <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
+ <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/systodo" ></property>
+ <property name="javax.persistence.jdbc.user" value="postgres" />
+ <property name="javax.persistence.jdbc.password" value="postgres" />
+ </properties>
+ 
+ </persistence-unit>
+</persistence>
+
+    
+   
