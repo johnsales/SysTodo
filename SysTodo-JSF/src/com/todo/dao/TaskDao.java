@@ -9,6 +9,7 @@ import javax.persistence.Query;
 
 import com.todo.model.Task;
 
+//Repository 
 public class TaskDao {
 
 	private EntityManager em;
