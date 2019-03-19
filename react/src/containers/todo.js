@@ -23,7 +23,7 @@ class Todo extends React.Component{
 
     async componentDidMount(){
         try {
-            const items = await read(); 
+            const items = await read();
             this.setState({items: JSON.parse(items)});
 
         } catch (error) {
@@ -132,11 +132,13 @@ class Todo extends React.Component{
 
     async onToogleItemComplete(item){
         try {
-        const updatedItem = await update(item.id, {isChecked: !item.isChecked});        
+           // console.log('item:' +!item.isChecked)
+           console.log('check: '+ JSON.stringify(item.completedTask))
+        const updatedItem = await update(item.id, "changeBoolean");   
         const{
             items,
         } = this.state;
-
+/*
         this.setState({
             items : items.map((next) =>{
                 if(next.id === item.id){
@@ -144,7 +146,7 @@ class Todo extends React.Component{
                 }
                 return next;
             }),
-        });
+        });*/
         } catch (error) {
             this.setState({error: error.message});
         }
@@ -156,7 +158,6 @@ class Todo extends React.Component{
             newItemText,
             error,
         } = this.state;
-        console.log('return todopage'+items)
         return (
             <TodoPage 
                 items={items}

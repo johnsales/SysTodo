@@ -53,9 +53,16 @@ public class TaskWS {
     @Produces(MediaType.APPLICATION_JSON)
 	public void updateTask(@PathParam("id") Long id, String description)
 	{
+    	
+    	
     	Task task = dao.findTask(id);
-    	task.setDescription(description.replaceAll("\"", ""));
-	   dao.saveOrUpdate(task);  
+    	if(description.startsWith("\"changeBoolean")) {
+    		task.setCompletedTask(!task.getCompletedTask());
+    	}else {
+        	task.setDescription(description.replaceAll("\"", ""));
+
+    	}
+    	dao.saveOrUpdate(task);  
 	}
  
     /**

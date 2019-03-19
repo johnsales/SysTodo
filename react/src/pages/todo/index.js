@@ -27,7 +27,6 @@ function TodoPage(props) {
         onToogleItemComplete,
         error
     } = props;
-    console.log('inside page: '+items)
     return (
         <Layout>
             <Card>
@@ -79,14 +78,14 @@ function TodoPage(props) {
                             :
                             
                             <React.Fragment>
-                            {/* <Checkbox 
+                            { <Checkbox 
                                 className="todo-item-label" 
-                                checked={item.isChecked}
+                                checked={JSON.stringify(item.completedTask) == "false" ? false : true}
                                 onChange={() => onToogleItemComplete(item)}    
-                            /> */}
+                            /> }
 
                             <Label 
-                                className={`todo-item-label ${item.isChecked ? 'done' : ''}`}
+                                className={`todo-item-label ${JSON.stringify(item.completedTask) == "false" ? false : true ? 'done' : ''}`}
                                 onClick={()=> onEnterEditMode(item)}
                                 >
                                 

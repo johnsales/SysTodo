@@ -9,7 +9,6 @@ async function request(url, method, data){
     });
 
     const jsonResponse = await response.json();
-    console.log("jsonResponse: "+JSON.stringify(jsonResponse));
     
     if(response.status !== 200){
         let error;
